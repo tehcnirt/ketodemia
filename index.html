@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ketodemia - Recetas Keto Exclusivas</title>
+    <meta name="description" content="Recetas keto exclusivas, macros precisas y planes de comidas personalizados. Suscríbete para acceder a contenido de nutrición cetogénica.">
+    <meta name="keywords" content="keto, recetas, dieta cetogénica, macros, nutrición">
+    <meta name="author" content="Ketodemia">
+    <meta property="og:title" content="Ketodemia - Recetas Keto Exclusivas">
+    <meta property="og:description" content="Recetas keto exclusivas, macros precisas y planes de comidas personalizados.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ketodemia.com">
+    <link rel="canonical" href="https://ketodemia.com">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            line-height: 1.6;
+            color: #2d3436;
+            background: linear-gradient(135deg, #f5f7fa 0%, #f0f3f7 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            align-items: stretch;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+            color: white;
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-section h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-section .subtitle {
+            font-size: 1.1rem;
+            font-weight: 400;
+            opacity: 0.95;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .hero-section .highlight {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .highlight-item {
+            font-size: 0.95rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .highlight-item::before {
+            content: "✓";
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .form-section {
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .form-section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #2d3436;
+        }
+
+        .form-section .form-description {
+            font-size: 0.95rem;
+            color: #636e72;
+            margin-bottom: 32px;
+            line-height: 1.5;
+        }
+
+        /* Brevo form styling */
+        .brevo-form-wrapper {
+            width: 100%;
+        }
+
+        .brevo-form-wrapper iframe {
+            width: 100% !important;
+            border: none !important;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-section {
+                padding: 40px 30px;
+            }
+
+            .hero-section h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-section .subtitle {
+                font-size: 1rem;
+            }
+
+            .form-section {
+                padding: 40px 30px;
+            }
+
+            .form-section h2 {
+                font-size: 1.3rem;
+            }
+
+            .highlight {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 12px;
+            }
+
+            .container {
+                border-radius: 12px;
+            }
+
+            .hero-section {
+                padding: 32px 20px;
+            }
+
+            .hero-section h1 {
+                font-size: 1.5rem;
+            }
+
+            .form-section {
+                padding: 32px 20px;
+            }
+
+            .form-section h2 {
+                font-size: 1.2rem;
+            }
+
+            .form-section .form-description {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Focus visible for keyboard navigation */
+        :focus-visible {
+            outline: 2px solid #2ecc71;
+            outline-offset: 2px;
+        }
+
+        /* Cookie Banner */
+        #cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(45, 52, 54, 0.95);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.95rem;
+            z-index: 9999;
+            display: none;
+        }
+
+        #cookie-banner.show {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #cookie-banner p {
+            margin: 0;
+            max-width: 600px;
+            line-height: 1.5;
+        }
+
+        #cookie-banner a {
+            color: #2ecc71;
+            text-decoration: underline;
+        }
+
+        .cookie-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cookie-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .cookie-btn-accept {
+            background: #2ecc71;
+            color: white;
+        }
+
+        .cookie-btn-accept:hover {
+            background: #27ae60;
+        }
+
+        .cookie-btn-decline {
+            background: transparent;
+            color: #ecf0f1;
+            border: 1px solid #ecf0f1;
+        }
+
+        .cookie-btn-decline:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            #cookie-banner {
+                padding: 16px;
+            }
+
+            #cookie-banner p {
+                font-size: 0.85rem;
+            }
+
+            .cookie-buttons {
+                gap: 8px;
+            }
+
+            .cookie-btn {
+                padding: 8px 16px;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Footer Links */
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.85rem;
+            color: #95a5a6;
+            background: #f9f9f9;
+        }
+
+        footer a {
+            color: #2ecc71;
+            text-decoration: none;
+            margin: 0 12px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content-wrapper">
+            <!-- Hero Section -->
+            <div class="hero-section">
+                <h1>Ketodemia</h1>
+                <p class="subtitle">Recetas exclusivas, macros precisas y planes de comidas para tu transformación keto.</p>
+                <div class="highlight">
+                    <div class="highlight-item">Recetas probadas</div>
+                    <div class="highlight-item">Macros calculadas</div>
+                    <div class="highlight-item">Planes personalizados</div>
+                </div>
+            </div>
+
+            <!-- Form Section -->
+            <div class="form-section">
+                <h2>Suscríbete</h2>
+                <p class="form-description">Acceso inmediato a recetas exclusivas y consejos de nutrición cetogénica. Sin spam, solo contenido de valor.</p>
+                
+                <div class="brevo-form-wrapper">
+                    <!-- Brevo Form Embed Code Here -->
+                    <script type="text/javascript" src="https://sibforms.com/forms/end/build/main.js"></script>
+                    <link rel="stylesheet" href="https://sibforms.com/forms/end/build/sib-forms.css">
+                    <div id="sib-form-container" class="sib-form-container">
+                        <div id="error-message-sib-form-container" style="display:none; text-align:center; color:#661d1d; background-color:#ffeded; border-radius:3px; border: 1px solid #ff4949;padding:0.5rem;margin-bottom:1rem"></div>
+                        <form id="sib-form" method="POST" action="https://sibforms.com/serve/MUIFACnduQc3TRvITJJpOxcI1R0pWz4jnhOKbG7j6F-Vvcs7ZnO6Jz0DmVnMLw8d5PCqv70aJ1I4uEU-g1sIxLf6k2A8cUqrI4SbmwWzXXP8Eg5YVHe5hDlRD0k9VBa1Hes_5XlkN7EL8ZEJ4Y4SQ9SBHqh0VXnVx-4F8LZ4dHYKz6RGlnMdqVN" data-type="subscription">
+                            <div style="padding: 8px 0;">
+                                <div class="form__group" style="margin-bottom: 0;">
+                                    <input class="input" aria-label="Email" maxlength="150" name="email" placeholder="tu@email.com" required="" type="email" style="height:auto;padding:12px 16px;border-radius:4px;border:1px solid #cccccc;font-size:16px;width:100%;box-sizing:border-box;">
+                                </div>
+                            </div>
+                            <div style="margin-top: 12px;">
+                                <button class="button" type="submit" style="background-color:#2ecc71;color:#ffffff;padding:12px 24px;border:none;border-radius:4px;font-size:16px;font-weight:600;width:100%;cursor:pointer;transition:background-color 0.3s;">
+                                    Confirmar suscripción
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <p style="font-size: 0.85rem; color: #95a5a6; margin-top: 16px; line-height: 1.4;">Al suscribirte, recibirás un email de confirmación. Respetamos tu privacidad. Puedes darte de baja en cualquier momento.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <a href="/privacy.html">Política de Privacidad</a>
+        <a href="/terms.html">Términos de Servicio</a>
+        <a href="mailto:info@ketodemia.com">Contacto</a>
+    </footer>
+
+    <!-- Cookie Banner -->
+    <div id="cookie-banner">
+        <p>Utilizamos cookies para mejorar tu experiencia en nuestro sitio. Al continuar navegando, aceptas nuestro uso de cookies.</p>
+        <div class="cookie-buttons">
+            <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">Aceptar</button>
+            <button class="cookie-btn cookie-btn-decline" onclick="declineCookies()">Rechazar</button>
+            <a href="/privacy.html" style="font-size: 0.9rem; margin-left: 8px;">Más información</a>
+        </div>
+    </div>
+
+    <script>
+        // Cookie Banner Logic
+        function showCookieBanner() {
+            const cookieConsent = localStorage.getItem('ketodemia-cookie-consent');
+            if (!cookieConsent) {
+                document.getElementById('cookie-banner').classList.add('show');
+            }
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('ketodemia-cookie-consent', 'accepted');
+            document.getElementById('cookie-banner').classList.remove('show');
+            // Initialize analytics or tracking here
+        }
+
+        function declineCookies() {
+            localStorage.setItem('ketodemia-cookie-consent', 'declined');
+            document.getElementById('cookie-banner').classList.remove('show');
+        }
+
+        // Show cookie banner on page load
+        window.addEventListener('load', showCookieBanner);
+    </script>
+</body>
+</html>

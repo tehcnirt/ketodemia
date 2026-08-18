@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /private/
+
+# Crawl delay (optional - be nice to servers)
+Crawl-delay: 1
+
+# Sitemaps
+Sitemap: https://ketodemia.com/sitemap.xml
