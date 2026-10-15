@@ -1,0 +1,90 @@
+{
+  "repositorio_blueprint": "tehcnirt/blueprint",
+  "commit_blueprint": "4f49e17983e3492c5845fddfc495d38444488fab",
+  "perfil": "software",
+  "adopcion": "parcial",
+  "recursos_adoptados": [
+    {
+      "origen": "plantillas/base/AGENTS.md",
+      "destino": "AGENTS.md",
+      "sha256_fuente": "366131a0eddbd8dc55f201ab2410bfbefc70dd312092c58f11938ee2112f63b9",
+      "sha256_destino": "15698a02051d7746a5924d83f295bbca4c02d1034e3e8b2a33b582bd9ce97c3e",
+      "adaptacion": "Contrato breve de arranque, conservando decisiones y referencias locales."
+    },
+    {
+      "origen": "plantillas/base/CLAUDE.md",
+      "destino": "CLAUDE.md",
+      "sha256_fuente": "336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49",
+      "sha256_destino": "336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49",
+      "adaptacion": "Copia byte exacta del puente Claude."
+    },
+    {
+      "origen": "plantillas/base/herramientas/consultar_blueprint.py",
+      "destino": "herramientas/consultar_blueprint.py",
+      "sha256_fuente": "0899a1281abcb8230fe57062db86744c2f7d0f23c627f856de92090e3f09e57e",
+      "sha256_destino": "0899a1281abcb8230fe57062db86744c2f7d0f23c627f856de92090e3f09e57e",
+      "adaptacion": "Copia byte exacta; la ruta local varía por repositorio."
+    },
+    {
+      "origen": "plantillas/base/docs/operacion/actualizar-desde-blueprint.md",
+      "destino": "docs/operacion/actualizar-desde-blueprint.md",
+      "sha256_fuente": "0915827758a0bb7fb93d7ca8bf2c012f46f1fc26a64b73eac1b32c9e47831b3e",
+      "sha256_destino": "18f8936e0c24f2e920fa537defcc82bc3718511659a19db32c12644d7c8101ed",
+      "adaptacion": "Procedimiento adaptado al pin, clon temporal, comandos concretos y límites locales."
+    },
+    {
+      "origen": "plantillas/base/herramientas/tests/test_consultar_blueprint.py",
+      "destino": "herramientas/tests/test_seguimiento_blueprint.py",
+      "sha256_fuente": "088e49ba329f1c90581cc7998917399c3df281900c2e28c4bcc2a16ecb71e952",
+      "adaptacion": "Ocho casos fuente adaptados a la ruta local, más prueba de pin y hash."
+    },
+    {
+      "origen": "docs/actualizaciones/nucleo-1.5.0-seguimiento.md",
+      "destino": ".github/workflows/blueprint-seguimiento.yml",
+      "sha256_fuente": "3970a78fdf5b5c75cf684d3368add3847d77b41d767b80e49d62bb0e3232d4cc",
+      "sha256_destino": "ea8fea4097cd20ad0d9c8c58c07a0c3005097c9f88e4db05a6cb97572b4a13ff",
+      "adaptacion": "Workflow de validación offline solicitado para este repositorio."
+    }
+  ],
+  "adaptaciones": [
+    "AGENTS raíz exige leer el contrato local, procedimiento y registro al retomar y antes de publicar, y una consulta remota vigente en ambos puntos; el pin solo acredita procedencia.",
+    "CLAUDE.md es un puente de una línea a AGENTS.md.",
+    "Consultor copiado byte exacto a la ruta local apropiada; procedimiento adaptado al proyecto.",
+    "Las ocho pruebas fuente se adaptan a la estructura local; se agregan pruebas de validación del pin real y del hash de la copia del consultor.",
+    "Workflow offline de Python 3.12 ejecuta exclusivamente la prueba local de seguimiento."
+  ],
+  "desconocidos": [
+    "La consulta remota más reciente y las actualizaciones posteriores al commit fijado no se verificaron en este proceso offline.",
+    "La adopción parcial no acredita que todas las reglas del núcleo 1.5.0 estén incorporadas funcionalmente; solo se registra el alcance de los archivos enumerados."
+  ],
+  "seguimiento_blueprint": {
+    "version": 1,
+    "activo": true,
+    "autoriza_preparar": true,
+    "autoriza_fusionar": false,
+    "resoluciones": [
+      {
+        "id": "nucleo-1.5.0-seguimiento",
+        "estado": "aplicada",
+        "motivo": "Instalado el mecanismo local de seguimiento diferido con contrato de arranque, procedimiento, consultor, pruebas offline y workflow.",
+        "evidencia": "AGENTS.md; docs/operacion/actualizar-desde-blueprint.md; consultor, pruebas y workflow enumerados en recursos_adoptados.",
+        "commit_blueprint": "4f49e17983e3492c5845fddfc495d38444488fab"
+      },
+      {
+        "id": "nucleo-1.4.0-ejecucion-explicita",
+        "estado": "aplazada",
+        "motivo": "La instalación solicitada se limita al núcleo 1.5.0; el núcleo 1.4.0 requiere tarea de adaptación propia.",
+        "evidencia": "docs/operacion/actualizar-desde-blueprint.md conserva la actualización pendiente; no se incorporaron reglas ni controles 1.4.0."
+      },
+      {
+        "id": "nucleo-1.6.0-delegacion-justificada",
+        "estado": "aplazada",
+        "motivo": "La instalación solicitada se limita al núcleo 1.5.0; el núcleo 1.6.0 requiere tarea de adaptación propia.",
+        "evidencia": "docs/operacion/actualizar-desde-blueprint.md conserva la actualización pendiente; no se incorporaron reglas ni controles 1.6.0."
+      }
+    ]
+  },
+  "version_blueprint": null,
+  "version_nucleo_consultada": "1.6.0",
+  "version_seguimiento_adoptada": "1.5.0"
+}
