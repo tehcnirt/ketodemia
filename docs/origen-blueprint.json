@@ -8,7 +8,7 @@
       "origen": "plantillas/base/AGENTS.md",
       "destino": "AGENTS.md",
       "sha256_fuente": "366131a0eddbd8dc55f201ab2410bfbefc70dd312092c58f11938ee2112f63b9",
-      "sha256_destino": "15698a02051d7746a5924d83f295bbca4c02d1034e3e8b2a33b582bd9ce97c3e",
+      "sha256_destino": "93d54181e7ffb2d2f1e8741aa1bf8f50dc8ab61cb830a4e29181f8ad023b4217",
       "adaptacion": "Contrato breve de arranque, conservando decisiones y referencias locales."
     },
     {
@@ -29,7 +29,7 @@
       "origen": "plantillas/base/docs/operacion/actualizar-desde-blueprint.md",
       "destino": "docs/operacion/actualizar-desde-blueprint.md",
       "sha256_fuente": "0915827758a0bb7fb93d7ca8bf2c012f46f1fc26a64b73eac1b32c9e47831b3e",
-      "sha256_destino": "18f8936e0c24f2e920fa537defcc82bc3718511659a19db32c12644d7c8101ed",
+      "sha256_destino": "3cd092aee229d6a78b384241a85d27bd54033ce64b8010be9e46a3af8aada3a5",
       "adaptacion": "Procedimiento adaptado al pin, clon temporal, comandos concretos y límites locales."
     },
     {
@@ -81,6 +81,13 @@
         "estado": "aplazada",
         "motivo": "La instalación solicitada se limita al núcleo 1.5.0; el núcleo 1.6.0 requiere tarea de adaptación propia.",
         "evidencia": "docs/operacion/actualizar-desde-blueprint.md conserva la actualización pendiente; no se incorporaron reglas ni controles 1.6.0."
+      },
+      {
+        "id": "nucleo-2.0.0-contrato-minimo",
+        "estado": "aplicada",
+        "motivo": "Contrato reducido: Blueprint solo se consulta por encargo, no al retomar ni al publicar.",
+        "evidencia": "AGENTS.md y docs/operacion/actualizar-desde-blueprint.md actualizados; hashes en recursos_adoptados.",
+        "commit_blueprint": "5ebb787f143a296fdfb12ec857a30a044d445638"
       }
     ]
   },

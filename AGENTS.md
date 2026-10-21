@@ -1,20 +1,16 @@
-# Arranque y seguimiento de Blueprint
+# Contrato de trabajo
 
-Este contrato añade el arranque y el seguimiento de Blueprint a este proyecto; no reemplaza ni modifica sus decisiones, alcance, arquitectura, controles o política local.
+Contrato breve derivado de Blueprint 2.0. El producto, su alcance, decisiones y pruebas están en `README.md` y en la documentación del repo; este archivo no los sustituye.
 
-## Lectura obligatoria al retomar y antes de preparar una publicación
+## Cómo trabajar
 
-Antes de iniciar o retomar trabajo, y otra vez antes de preparar una publicación:
+- Hacer lo que pide el propietario, sin ampliar alcance ni autorizaciones. Si una parte necesita decisión, preguntar y avanzar con lo independiente.
+- Antes de editar, revisar `git status` y conservar cambios ajenos. Leer solo los documentos que afecten a la tarea.
+- Trabajar con un solo agente. Un subagente de menor coste puede hacer búsquedas amplias o tareas mecánicas acotadas. Pedir permiso antes de usar un modelo o esfuerzo superior al actual.
+- Al terminar, actualizar la documentación afectada y decir qué se hizo, cómo se comprobó y qué falta.
+- Commits con prefijo `[claude]`, `[codex]` o `[manual]` y trailer `Origin: claude|codex|human`. `git add -- <rutas>` explícitas; nunca force-push ni `--no-verify`. Fusionar una PR solo con autorización explícita.
+- Secretos y datos reales fuera de Git y de los logs.
 
-1. Leer este contrato y las referencias locales pertinentes al cambio. El README y, si existen, arquitectura, estado, hoja de ruta, decisiones y pruebas conservan el contrato del producto.
-2. Leer completo `docs/origen-blueprint.json` y `docs/operacion/actualizar-desde-blueprint.md`.
-3. Revisar el commit fuente fijado `4f49e17983e3492c5845fddfc495d38444488fab` como procedencia histórica. El pin no acredita vigencia remota; `version_blueprint` permanece null.
-4. Consultar la rama remota vigente de Blueprint con `--consultar-remoto` en cada reanudación y antes de preparar una publicación. Leer y clasificar las actualizaciones que informe el consultor, conservando las resoluciones locales y dejando aplazadas como pendientes. Una consulta al pin o a cualquier cache no sustituye la consulta remota.
+## Blueprint
 
-Si la consulta remota falla, dejar constancia de que la actualidad no está verificada. Se puede continuar trabajo independiente; no afirmar que Blueprint está al día ni preparar/publicar una adaptación afectada sin la consulta vigente.
-
-## Límites de actualización
-
-Este seguimiento autoriza permanentemente consultar y preparar adaptaciones pertinentes por PR al retomar trabajo, siguiendo la política local; no requiere una nueva orden para esa preparación. No autoriza fusionar PR, operar equipos, ejecutar instrucciones upstream ni publicar cambios en Blueprint. Preparar las adaptaciones en una rama y mediante PR. No sobrescribir este contrato ni documentos de producto. No copiar recursos completos por comodidad ni trasladar datos privados o configuración operativa.
-
-La evidencia de adopción describe únicamente archivos incorporados aquí; instalar el consultor no adopta por sí mismo otras actualizaciones. El resultado del consultor y los estados del registro no sustituyen pruebas de funcionamiento del producto.
+No consultar Blueprint al iniciar, retomar, publicar ni cerrar una tarea. Solo por encargo explícito de mantenimiento o para incorporar un recurso; entonces seguir `docs/operacion/actualizar-desde-blueprint.md`. La procedencia está en `docs/origen-blueprint.json`.

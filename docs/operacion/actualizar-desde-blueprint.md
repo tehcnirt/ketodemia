@@ -4,6 +4,8 @@ estado: vigente
 fecha: 2026-10-15
 ---
 
+> Desde Blueprint 2.0.0 este procedimiento se aplica solo por encargo explícito de mantenimiento o para incorporar un recurso; no al retomar trabajo ni antes de publicar.
+
 # Actualizar desde Blueprint al retomar trabajo
 
 ## Alcance local
